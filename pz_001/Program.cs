@@ -50,6 +50,30 @@ namespace pz_001
         }
         static void Main(string[] args)
         {
+            #region поиск массив
+            //1кк
+            Stopwatch sw1 = new();
+            int[] ints = new int[1000000];
+            //100к
+            for (int i = 0; i < ints.Length; i++) ints[i] = uuu.Next(0, 100000);
+
+            int iForSimpleSearchArray = 0;
+            int resultSimpleSearch;
+
+            int whatWeSearching = int.Parse(Console.ReadLine());
+
+            sw1.Start();
+            while (iForSimpleSearchArray < ints.Length && ints[iForSimpleSearchArray] != whatWeSearching)
+            {
+                iForSimpleSearchArray++;
+                if (iForSimpleSearchArray < ints.Length) resultSimpleSearch = -1;
+
+            }
+            sw1.Stop();
+            Console.WriteLine("номер в массиве: {0},\t процедура заняла (в итках): {1}", iForSimpleSearchArray, sw1.ElapsedTicks);
+
+            #endregion
+
             //  бинарный поиск по массиву отсутсвует в связи с !!!!!!!!!!!!!!!!!!!!!1
 
             #region Работаем просто список
