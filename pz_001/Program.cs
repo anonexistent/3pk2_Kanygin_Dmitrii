@@ -9,6 +9,11 @@ namespace pz_001
     {
         public static Random uuu = new();
 
+        //static int SimpleSearchArray(int[] a, int b)
+        //{
+
+        //}
+
         //static int SearchBinaryHash(ICollection a, int x)
         //{
         //    int middle, left = 0, right = a.Count - 1;
@@ -45,18 +50,7 @@ namespace pz_001
         }
         static void Main(string[] args)
         {
-
-
-
-
-
-
-            // !!! СДЕЛАТЬ ПОИСК БИНАРНЫЙ МАССИВА !! ++ ВЕЗДЕ TIMING СДЕЛАТЬ ДОПОЛНИТЕЛЬНО
-
-
-
-
-
+            //  бинарный поиск по массиву отсутсвует в связи с !!!!!!!!!!!!!!!!!!!!!1
 
             #region Работаем просто список
             List<int> listint = new List<int>();
