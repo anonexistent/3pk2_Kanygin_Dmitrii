@@ -1,8 +1,30 @@
-﻿namespace graph2
+﻿using System.Drawing;
+
+namespace graph2
 {
     internal class Program
     {
         static Random uuu;
+
+        public static void Print(object a)
+        {
+           Console.ForegroundColor = ConsoleColor.Red;
+           Console.BackgroundColor = ConsoleColor.White;
+           Console.WriteLine(a.ToString());
+           Console.ResetColor();
+        }
+
+        public static void DFS(Graph graph, int node)
+        {
+           graph.Vector[i] = true; // отметить вершину i как обработанную
+           Console.Write("{0}" + ' ', i); // распечатать номер посещенной вершины
+           for (int k = 0; k < graph.Size; k++)
+           {
+                if (graph.Adjacency[i, k] && !(graph.Vector[k])) DFS(k);
+           }
+
+        }
+
         static void Main(string[] args)
         {
             //uuu = new();
