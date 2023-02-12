@@ -27,12 +27,12 @@ namespace graph2
             for (int i = 0; i < size; i++) Vector[i] = false; // иниц-я вектора посещенных вершин
             Size = size;
         }
-        public void Depth(int i) //i – вершина, с которой начинается обход
-        {
-            Vector[i] = true; // отметить вершину i как обработанную
-            Console.Write("{0}" + ' ', i); // распечатать номер посещенной вершины
-            for (int k = 0; k < Size; k++) if (Adjacency[i, k] && !(Vector[k])) Depth(k); // перейти к обработке вершины k
-        }
+        //public void Depth(int i) //i – вершина, с которой начинается обход
+        //{
+        //    Vector[i] = true; // отметить вершину i как обработанную
+        //    Console.Write("{0}" + ' ', i); // распечатать номер посещенной вершины
+        //    for (int k = 0; k < Size; k++) if (Adjacency[i, k] && !(Vector[k])) Depth(k); // перейти к обработке вершины k
+        //}
     }
 }
 

@@ -16,17 +16,18 @@ namespace graph2
 
         public static void DFS(Graph graph, int node)
         {
-           graph.Vector[i] = true; // отметить вершину i как обработанную
-           Console.Write("{0}" + ' ', i); // распечатать номер посещенной вершины
+           graph.Vector[node] = true; // отметить вершину i как обработанную
+           Console.Write("{0}" + ' ', node); // распечатать номер посещенной вершины
            for (int k = 0; k < graph.Size; k++)
            {
-                if (graph.Adjacency[i, k] && !(graph.Vector[k])) DFS(k);
+                if (graph.Adjacency[node, k] && !(graph.Vector[k])) DFS(graph,k);
            }
 
         }
 
         static void Main(string[] args)
         {
+            #region comm
             //uuu = new();
 
             ///*        неориент
@@ -61,6 +62,7 @@ namespace graph2
             //    г  0  1  0  0
 
             // */
+            #endregion
 
             bool[,] M = new bool[4, 4]
                                         {
@@ -70,7 +72,16 @@ namespace graph2
                                         {false, true, false, false}
                                         };
             Graph graph = new Graph(4, M);
-            graph.Depth(2);
+            //graph.Depth(2);
+            DFS(graph, 0);
+
+
+
+
+
+
+
+            Console.ReadKey();
         }
     }
 }
