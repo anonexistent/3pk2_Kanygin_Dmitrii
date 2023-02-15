@@ -7,7 +7,7 @@
         private Node link; // ссылка на соседний элемент списка вершин
         public int Id { get; set; } // свойства
         public int Weight { get; set; }
-        public Node[] Link { get; set; }
+        public List<Node> Link { get; set; }
         public Node() { } // конструкторы
         public Node(int id)
         {
@@ -17,6 +17,7 @@
         {
             Id = id; 
             Weight = weight;
+            Link = new List<Node>();
         }
     }
 }

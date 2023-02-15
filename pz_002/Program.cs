@@ -4,7 +4,7 @@ namespace graph2
 {
     internal class Program
     {
-        static Random uuu;
+        public static Random uuu;
 
         public static void Print(object a)
         {
@@ -13,6 +13,13 @@ namespace graph2
            Console.WriteLine(a.ToString());
            Console.ResetColor();
         }
+
+        /*
+         1 найти самый дешевый узел
+         2 обновить стоимость его соседей
+         3 повторять для всех узлов
+         4 результат
+         */
 
         public static void Dijkstra(Graph g)
         {
@@ -27,13 +34,13 @@ namespace graph2
            {
                 if (graph.Adjacency[node, k] && !(graph.Vector[k])) DFS(graph,k);
            }
-
         }
 
         static void Main(string[] args)
         {
+            uuu = new();
+
             #region comm
-            //uuu = new();
 
             ///*        неориент
             //       а  б  в  г
