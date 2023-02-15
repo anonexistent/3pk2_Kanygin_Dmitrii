@@ -36,20 +36,20 @@ namespace graph2
                     Vector[i] = false;                  // иниц-я вектора посещенных вершин
                     for (int j = 0; j < size; j++)
                     {
-                        Task.Delay(100);
+                        System.Threading.Thread.Sleep(50);
                         //(G[i, j] == true ?  : null);
 
                         if (G[i, j] == true)
                         {
                             adjList[i].Link.Add(adjList[j]);
-                            Console.WriteLine($"is road(link) from \t{i}\tto\t{j}");
+                            Console.WriteLine($"is road(link) from \t{i+1}\tto\t{j+1}");
                         }
                     }
                 }
             }
             else
             {
-                Console.WriteLine("something wrong! LEGO(конструктор) isn't work!!");
+                Program.Print("something wrong! LEGO(конструктор) isn't work!!");
                 size = -1;
                 adjList = null;
                 adjacency = null;
