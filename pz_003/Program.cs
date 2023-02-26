@@ -116,7 +116,8 @@
 
             int whatWeSearch = int.Parse(Console.ReadLine()), count1 = 0;
 
-            Trees.SearchAboutInfo(tree.Root, whatWeSearch, out count1);
+            //Trees.SearchAboutInfo(tree.Root, whatWeSearch, out count1);
+            Trees.Searching(tree.Root, whatWeSearch,out count1);
             Console.WriteLine("count of right value: "+count1);
         }
     }

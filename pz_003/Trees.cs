@@ -88,5 +88,16 @@
 
             }
         }
+
+        public static void Searching(TreeNode x, int what, out int countWhat, int currentCount=0)
+        {
+            countWhat=currentCount;
+            if (x != null)
+            {
+                if (x.Info == what) currentCount++;
+                if (x.Info != what) Searching(x.Left, what, out countWhat, currentCount);
+                if (x.Info != what) Searching(x.Right, what, out countWhat, currentCount);
+            }
+        }
     }
 }
