@@ -107,14 +107,17 @@
             #endregion
 
             #region PlusMinus
-            int plus = 0, minus = 0;
-            plus += tree.Root.Info >= 0 ? 1 : 0;
-            minus += tree.Root.Info <= 0 ? 1 : 0;
-            Trees.CountPlusMinus(tree.Root,ref plus,ref minus);
-            Console.WriteLine($"\"+\":{plus}\t\"-\":{minus}");
+            //int plus = 0, minus = 0;
+            //plus += tree.Root.Info >= 0 ? 1 : 0;
+            //minus += tree.Root.Info <= 0 ? 1 : 0;
+            //Trees.CountPlusMinus(tree.Root,ref plus,ref minus);
+            //Console.WriteLine($"\"+\":{plus}\t\"-\":{minus}");
             #endregion
 
+            int whatWeSearch = int.Parse(Console.ReadLine()), count1 = 0;
 
+            Trees.SearchAboutInfo(tree.Root, whatWeSearch, out count1);
+            Console.WriteLine("count of right value: "+count1);
         }
     }
 }

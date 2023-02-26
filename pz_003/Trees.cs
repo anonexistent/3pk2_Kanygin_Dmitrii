@@ -23,36 +23,35 @@
         }
 
         #region TravelingInTree
-            //static void InUnderGround(TreeNode x, int lvl = 0)
-            //{
-            //    int currentLvl = lvl;
+        //static void InUnderGround(TreeNode x, int lvl = 0)
+        //{
+        //    int currentLvl = lvl;
 
-            //    if (x != null)
-            //    {
-            //        lvl++;
-            //        if (x.Left != null) InUnderGround(x.Left, lvl);
-            //        for (int i = 0; i < lvl - 1; i++) Console.Write("\t");
-            //        Console.WriteLine(x.Info);
-            //        if (x.Right != null) InUnderGround(x.Right, lvl);
-            //    }
-            //}
+        //    if (x != null)
+        //    {
+        //        lvl++;
+        //        if (x.Left != null) InUnderGround(x.Left, lvl);
+        //        for (int i = 0; i < lvl - 1; i++) Console.Write("\t");
+        //        Console.WriteLine(x.Info);
+        //        if (x.Right != null) InUnderGround(x.Right, lvl);
+        //    }
+        //}
         #endregion
 
-
-        public static void AvgInfo(TreeNode x,out int future, int currentAvg = 0)
+        public static void AvgInfo(TreeNode x, out int future, int currentAvg = 0)
         {
             future = currentAvg;
 
             if (x != null)
             {
                 future += x.Info;
-                if (x.Left != null) AvgInfo(x.Left,out future, future);
-                if (x.Right != null) AvgInfo(x.Right,out future, future);
-                
+                if (x.Left != null) AvgInfo(x.Left, out future, future);
+                if (x.Right != null) AvgInfo(x.Right, out future, future);
+
             }
         }
 
-        public static void CountPlusMinus(TreeNode x, ref int plus , ref int minus )
+        public static void CountPlusMinus(TreeNode x, ref int plus, ref int minus)
         {
             if (x != null)
             {
@@ -60,14 +59,33 @@
                 {
                     if (x.Left.Info >= 0) plus++;
                     else minus++;
-                    CountPlusMinus(x.Left,ref plus,ref minus);
+                    CountPlusMinus(x.Left, ref plus, ref minus);
                 }
                 if (x.Right != null)
                 {
                     if (x.Right.Info >= 0) plus++;
                     else minus++;
-                    CountPlusMinus(x.Right, ref plus,ref minus);
+                    CountPlusMinus(x.Right, ref plus, ref minus);
                 }
+            }
+        }
+
+        public static void SearchAboutInfo(TreeNode x, int what, out int countWhat, int currentCount = 0)
+        {
+            countWhat = currentCount;            
+            if (x != null)
+            {
+                if (x.Left != null)
+                {
+                    if(x.Left.Info==what) currentCount++;
+                    SearchAboutInfo(x.Left, what, out countWhat, currentCount);
+                }
+                if (x.Right != null)
+                {
+                    if (x.Right.Info == what) currentCount++;
+                    SearchAboutInfo(x.Right, what, out countWhat, currentCount);
+                }
+
             }
         }
     }
