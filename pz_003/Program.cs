@@ -21,6 +21,7 @@
             }
         }
 
+
         //  должен быть симметричный (inorder)
         static void InUnderGround(TreeNode x, int lvl = 0)
         {
@@ -31,10 +32,11 @@
                 lvl++;
                 if(x.Left!=null) InUnderGround(x.Left, lvl);
                 for (int i = 0; i < lvl-1; i++) Console.Write("\t");
-                Console.WriteLine(x.Info);
+                Console.WriteLine(x.Info.ToString());
                 if (x.Right != null) InUnderGround(x.Right, lvl);
             }
         }
+
 
         //   не обязан но может быть обратный
         static void PostUnderGround(TreeNode x)
@@ -74,6 +76,8 @@
             и конкретно с последним вариантом что то не так 
                     даже до того как он сломался*/
 
+
+
         static void Main(string[] args)
         {
             BinaryTree tree = new();
@@ -91,6 +95,8 @@
             InUnderGround(tree.Root);
 
             //информационное поле в виде символа зачем???? может лучше инт или хотя бы байт
+
+            Console.WriteLine(Trees.AvgInfo(tree.Root));
         }
     }
 }

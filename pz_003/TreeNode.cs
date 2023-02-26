@@ -28,11 +28,11 @@
 		{
 
 		}
-		public TreeNode(char info)
+		public TreeNode(int info)
 		{
 			Info=info;
 		}
-		public TreeNode(char info, TreeNode left, TreeNode right)
+		public TreeNode(int info, TreeNode left, TreeNode right)
 		{
 			Info = info;
 			Left = left;
