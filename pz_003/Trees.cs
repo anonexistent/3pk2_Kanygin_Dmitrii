@@ -51,5 +51,24 @@
                 
             }
         }
+
+        public static void CountPlusMinus(TreeNode x, ref int plus , ref int minus )
+        {
+            if (x != null)
+            {
+                if (x.Left != null)
+                {
+                    if (x.Left.Info >= 0) plus++;
+                    else minus++;
+                    CountPlusMinus(x.Left,ref plus,ref minus);
+                }
+                if (x.Right != null)
+                {
+                    if (x.Right.Info >= 0) plus++;
+                    else minus++;
+                    CountPlusMinus(x.Right, ref plus,ref minus);
+                }
+            }
+        }
     }
 }

@@ -80,13 +80,15 @@
 
         static void Main(string[] args)
         {
-            #region CreatTree
             BinaryTree tree = new();
+
+            #region CreatTree
+
 
             int countNode;
             Console.Write("size: ");
             if (int.TryParse(Console.ReadLine(), out countNode))
-            {            
+            {
                 Console.Clear();
                 tree.Root = Trees.CreateBalanced(countNode);
             }
@@ -101,7 +103,15 @@
             //информационное поле в виде символа зачем???? может лучше инт или хотя бы байт
             Print("\n\t\t\tnodes's avg\n");
             Trees.AvgInfo(tree.Root, out int o);
-            Console.WriteLine("\t\t\t"+o);
+            Console.WriteLine("\t\t\t" + o);
+            #endregion
+
+            #region PlusMinus
+            int plus = 0, minus = 0;
+            plus += tree.Root.Info >= 0 ? 1 : 0;
+            minus += tree.Root.Info <= 0 ? 1 : 0;
+            Trees.CountPlusMinus(tree.Root,ref plus,ref minus);
+            Console.WriteLine($"\"+\":{plus}\t\"-\":{minus}");
             #endregion
 
 
