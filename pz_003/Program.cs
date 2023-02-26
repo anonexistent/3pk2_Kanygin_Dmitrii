@@ -4,8 +4,8 @@
     {
         static void Print(object a)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.WriteLine(a.ToString());
             Console.ResetColor();
         }
@@ -31,7 +31,7 @@
             {
                 lvl++;
                 if(x.Left!=null) InUnderGround(x.Left, lvl);
-                for (int i = 0; i < lvl-1; i++) Console.Write("\t");
+                for (int i = 0; i < lvl; i++) Console.Write("\t");
                 Console.WriteLine(x.Info.ToString());
                 if (x.Right != null) InUnderGround(x.Right, lvl);
             }
@@ -80,6 +80,7 @@
 
         static void Main(string[] args)
         {
+            #region CreatTree
             BinaryTree tree = new();
 
             int countNode;
@@ -91,12 +92,19 @@
             }
             else tree.Root = Trees.CreateBalanced(0);
 
+            Print("\t\t\tcurrent tree\n");
 
             InUnderGround(tree.Root);
+            #endregion
 
+            #region avg
             //информационное поле в виде символа зачем???? может лучше инт или хотя бы байт
+            Print("\n\t\t\tnodes's avg\n");
+            Trees.AvgInfo(tree.Root, out int o);
+            Console.WriteLine("\t\t\t"+o);
+            #endregion
 
-            Console.WriteLine(Trees.AvgInfo(tree.Root));
+
         }
     }
 }
