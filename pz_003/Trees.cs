@@ -39,18 +39,17 @@
         #endregion
 
 
-        public static int AvgInfo(TreeNode x, int currentAvg = 0)
+        public static void AvgInfo(TreeNode x,out int future, int currentAvg = 0)
         {
-            int o = currentAvg;
+            future = currentAvg;
 
             if (x != null)
             {
-                o += x.Info;
-                if (x.Left != null) AvgInfo(x.Left, o);
-                if (x.Right != null) AvgInfo(x.Right, o);
+                future += x.Info;
+                if (x.Left != null) AvgInfo(x.Left,out future, future);
+                if (x.Right != null) AvgInfo(x.Right,out future, future);
                 
             }
-            if (x == null) return o;
         }
     }
 }
