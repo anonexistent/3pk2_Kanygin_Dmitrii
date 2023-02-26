@@ -11,8 +11,9 @@
             if (n == 0) root = null;
             else
             {
-                Console.Write("info (char):");
+                Console.Write($"info {n} (char):");
                 x = char.Parse(Console.ReadLine());
+                Console.Clear();
                 root = new TreeNode(x);
                 root.Left = CreateBalanced(n / 2);
                 root.Right = CreateBalanced(n - n / 2 - 1);
