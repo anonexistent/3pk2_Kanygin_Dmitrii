@@ -2,9 +2,9 @@
 {
     internal class TreeNode
     {
-		private char info;
+		private int info;
 
-		public char Info
+		public int Info
 		{
 			get { return info; }
 			set { info = value; }
