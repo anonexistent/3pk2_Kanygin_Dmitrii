@@ -12,7 +12,7 @@
             else
             {
                 Console.Write("info (char):");
-                x = char.Parse(Console.ReadKey().Key.ToString());
+                x = char.Parse(Console.ReadLine());
                 root = new TreeNode(x);
                 root.Left = CreateBalanced(n / 2);
                 root.Right = CreateBalanced(n - n / 2 - 1);

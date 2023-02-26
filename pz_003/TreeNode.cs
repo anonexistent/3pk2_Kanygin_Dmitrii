@@ -18,7 +18,6 @@
 			set { left = value; }
 		}
 		private TreeNode right;
-
 		public TreeNode Right
 		{
 			get { return right; }
