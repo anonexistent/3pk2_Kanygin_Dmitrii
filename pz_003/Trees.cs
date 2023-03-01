@@ -72,7 +72,7 @@
 
         public static void SearchAboutInfo(TreeNode x, int what, out int countWhat, int currentCount = 0)
         {
-            countWhat = currentCount;            
+            countWhat = currentCount;
             if (x != null)
             {
                 if (x.Left != null)
@@ -85,7 +85,6 @@
                     if (x.Right.Info == what) currentCount++;
                     SearchAboutInfo(x.Right, what, out countWhat, currentCount);
                 }
-
             }
         }
     }
