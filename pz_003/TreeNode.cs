@@ -38,5 +38,25 @@
 			Left = left;
 			Right = right;
 		}
-	}
+
+        public void Create(int n)
+        {
+            int x;
+            TreeNode root;
+
+            if (n == 0) root = null;
+            else
+            {
+                Console.Write($"info {n} (char):");
+                x = int.Parse(Console.ReadLine());
+                Console.Clear();
+                root = new TreeNode(x);
+
+                root.Left.Create(n / 2);
+                root.Right.Create(n - n / 2 - 1);
+            }
+
+            this = root;
+        }
+    }
 }

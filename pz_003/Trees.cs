@@ -15,6 +15,7 @@
                 x = int.Parse(Console.ReadLine());
                 Console.Clear();
                 root = new TreeNode(x);
+
                 root.Left = CreateBalanced(n / 2);
                 root.Right = CreateBalanced(n - n / 2 - 1);
             }
@@ -70,22 +71,58 @@
             }
         }
 
-        public static void SearchAboutInfo(TreeNode x, int what, out int countWhat, int currentCount = 0)
+        //public static void SearchAboutInfo(TreeNode x, int what, out int countWhat, int currentCount = 0)
+        //{
+        //    countWhat = currentCount;
+        //    if (x != null)
+        //    {
+        //        if (x.Left != null)
+        //        {
+        //            if(x.Left.Info==what) currentCount++;
+        //            SearchAboutInfo(x.Left, what, out countWhat, currentCount);
+        //        }
+        //        if (x.Right != null)
+        //        {
+        //            if (x.Right.Info == what) currentCount++;
+        //            SearchAboutInfo(x.Right, what, out countWhat, currentCount);
+        //        }
+        //    }
+        //}
+
+        //public static TreeNode SearchAboutInfo(TreeNode x, int wht)
+        //{
+        //    while(x.Info!=wht&&x!=null)
+        //    {
+        //        if (wht<x.Info)
+        //        {
+        //            x = x.Left;
+        //        }
+        //        else
+        //        {
+        //            x = x.Right;
+        //        }
+        //    }
+        //    return x;
+        //}
+
+        public static int SearchAboutInfo(TreeNode x, int wht, int currentCount = 0)
         {
-            countWhat = currentCount;
             if (x != null)
             {
+
                 if (x.Left != null)
                 {
-                    if(x.Left.Info==what) currentCount++;
-                    SearchAboutInfo(x.Left, what, out countWhat, currentCount);
+                    if (x.Left.Info == wht) currentCount++;                    
+                    SearchAboutInfo(x.Left, wht, currentCount);
                 }
                 if (x.Right != null)
                 {
-                    if (x.Right.Info == what) currentCount++;
-                    SearchAboutInfo(x.Right, what, out countWhat, currentCount);
+                    if(x.Right.Info == wht) currentCount++;
+                    SearchAboutInfo(x.Right, wht, currentCount);
                 }
             }
+            return currentCount;
         }
+
     }
 }

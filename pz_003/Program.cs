@@ -90,7 +90,8 @@
             if (int.TryParse(Console.ReadLine(), out countNode))
             {
                 Console.Clear();
-                tree.Root = Trees.CreateBalanced(countNode);
+                //tree.Root = Trees.CreateBalanced(countNode);
+                tree.Create(countNode);
             }
             else tree.Root = Trees.CreateBalanced(0);
 
@@ -116,7 +117,7 @@
 
             int whatWeSearch = int.Parse(Console.ReadLine()), count1 = 0;
 
-            Trees.SearchAboutInfo(tree.Root, whatWeSearch, out count1);
+            count1 = Trees.SearchAboutInfo(tree.Root,whatWeSearch);
             Console.WriteLine("count of right value: "+count1);
         }
     }

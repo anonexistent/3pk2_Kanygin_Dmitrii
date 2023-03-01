@@ -10,9 +10,17 @@
 			get { return root; }
 			set { root = value; }
 		}
+		private List<TreeNode> treeNodes;
 		public BinaryTree()
 		{
 			Root = null;
+		}
+
+		public List<TreeNode> ToArray()
+		{
+
+
+			return treeNodes;
 		}
 	}
 }
