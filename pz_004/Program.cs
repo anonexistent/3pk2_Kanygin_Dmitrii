@@ -32,6 +32,8 @@
 
             var tree = new DixotomyTree(new('0',uuu.Next(0,1001)));
 
+            //  хорошая идея присваивать рандом (чар) 58-128
+
             List<int> a = new();
 
             Console.Write($"count>> ");
@@ -42,10 +44,10 @@
             for (int i = 0; i < countLeafs; i++)
             {
                 
-                int temp = uuu.Next(0, 1001);
-                if (!a.Contains(temp))
+                var temp = new DTreeNode((char)uuu.Next(58,128), uuu.Next(0, 1001));
+                if (!a.Contains(temp.Key))
                 {
-                    a.Add(temp);
+                    a.Add(temp.Key);
                     DixotomyTree.Insert_DNode(tree.Root, temp);
                 }
                 else i--;
@@ -59,10 +61,16 @@
 
             #endregion
 
+            #region CountLeefs
+
             var result1 = new List<char>();
             DixotomyTree.InfoSum(tree.Root, result1);
 
             Print(string.Join('—',result1));
+
+            #endregion
+
+
         }
     }
 }

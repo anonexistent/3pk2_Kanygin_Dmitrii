@@ -19,13 +19,13 @@ namespace pz_004
 		{
 			root = start;
 		}
-        public static DTreeNode Insert_DNode(DTreeNode root, int k)
+        public static DTreeNode Insert_DNode(DTreeNode root, DTreeNode k)
         {
-            if (root == null) root = new DTreeNode(' ', k, null, null);
+            if (root == null) root = k;
             else
             {
-                if (k < root.Key) root.Left = Insert_DNode(root.Left, k);
-                else if (k > root.Key) root.Right = Insert_DNode(root.Right, k);
+                if (k.Key < root.Key) root.Left = Insert_DNode(root.Left, k);
+                else if (k.Key > root.Key) root.Right = Insert_DNode(root.Right, k);
                 else Console.WriteLine("eror: !(unique key)");
             }
 
