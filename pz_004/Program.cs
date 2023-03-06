@@ -70,6 +70,12 @@
 
             #endregion
 
+            #region CountBnchs
+
+            Console.WriteLine(DixotomyTree.HowMuchBenchInTheTree(tree.Root));
+
+            #endregion
+
 
         }
     }

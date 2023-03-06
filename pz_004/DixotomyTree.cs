@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace pz_004
 {
@@ -44,6 +45,12 @@ namespace pz_004
             {
                 InfoSum(x.Left,a);
             }
+        }
+
+        public static int HowMuchBenchInTheTree(DTreeNode x)
+        {
+            if (x == null || (x.Left == null && x.Right == null)) return 0;
+            else return 1 + HowMuchBenchInTheTree(x.Left) + HowMuchBenchInTheTree(x.Right);            
         }
     }
 }
