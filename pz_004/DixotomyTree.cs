@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace pz_004
+﻿namespace pz_004
 {
     internal class DixotomyTree
     {
@@ -52,5 +45,7 @@ namespace pz_004
             if (x == null || (x.Left == null && x.Right == null)) return 0;
             else return 1 + HowMuchBenchInTheTree(x.Left) + HowMuchBenchInTheTree(x.Right);            
         }
+
+        
     }
 }
