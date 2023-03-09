@@ -7,7 +7,7 @@
             Country country = new(-1,"x",0.0f);
             Country c2 = new(-2,"y",0.1f);
 
-            City one = new(0,"a",country);
+            City one = new(0,"a",country,10.0f);
             var two = one;
 
             Console.WriteLine($"произошло копирование и якобы есть два объекта:\n\t{one}\n\t{two}");
