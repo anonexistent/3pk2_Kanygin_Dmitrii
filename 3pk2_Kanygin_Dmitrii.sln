@@ -22,7 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_006", "pz_006\pz_006.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_007", "pz_007\pz_007.csproj", "{CB4C5FCC-12B2-494D-A9BA-E38F025D2719}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidMoment", "WpfApp1\SolidMoment.csproj", "{F5F51296-8B50-469E-909A-58EA6C827F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_008", "WpfApp1\pz_008.csproj", "{F5F51296-8B50-469E-909A-58EA6C827F06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
