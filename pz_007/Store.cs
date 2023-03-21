@@ -17,9 +17,8 @@ namespace pz_007
 
         public void SaveOrder(Client x, params Product[] a)
         {
-                AllPurchases.Add(temp);
-
-            }
+            var temp = new Order(x, a);
+            AllPurchases.Add(temp);
             
         }
     }
