@@ -9,7 +9,6 @@
         public string[] GetInfo()
         {
             return new string[3] { Name, Phone.ToString(), Region };
-
         }
     }
 }
