@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace pz_008.Model.Domain
+﻿namespace pz_008.Model.Domain
 {
     internal class PersonContact : IContact
     {
@@ -14,7 +8,8 @@ namespace pz_008.Model.Domain
 
         public string[] GetInfo()
         {
-            return new string[3] {Name, Phone.ToString(), Region};
+            return new string[3] { Name, Phone.ToString(), Region };
+
         }
     }
 }
