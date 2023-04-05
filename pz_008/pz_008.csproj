@@ -11,8 +11,4 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\Factory\" />
-  </ItemGroup>
-
 </Project>

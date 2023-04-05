@@ -9,8 +9,8 @@ namespace pz_008.Model.Domain
 {
     internal interface IContact
     {
-        public string Name { get; set; }
-        public long Phone { get; set; }
+        public string Name { get; }
+        public long Phone { get; }
         public string[] GetInfo();
     }
 }

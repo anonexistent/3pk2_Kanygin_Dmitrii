@@ -2,9 +2,16 @@
 {
     internal class PersonContact : IContact
     {
-        public string Name { get; set; }
-        public long Phone {get; set;}
-        public string Region { get; set;}
+        public string Name { get; }
+        public long Phone {get; }
+        public string Region { get; }
+
+        public PersonContact(string name, long phone, string region)
+        {
+            Name = name;
+            Phone = phone;
+            Region = region;
+        }
 
         public string[] GetInfo()
         {
