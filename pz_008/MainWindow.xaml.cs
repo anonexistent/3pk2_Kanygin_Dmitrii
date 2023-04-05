@@ -53,9 +53,11 @@ namespace pz_008
 
             DrawNewContact(a);
         }
-
+            
         private void DrawNewContact(object whoCallMe)
         {
+            currentPhone = new PersonContactFactory("zxczxc", 1234, "moscow").GetContact();
+
             //nWin = new Frame();
 
             ContactInfoPage c = new ContactInfoPage() { Title = $"page {++ii}" };
