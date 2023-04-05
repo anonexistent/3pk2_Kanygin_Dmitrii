@@ -79,19 +79,31 @@ namespace pz_008
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             uint currentContactNumber = (uint)((ListBox)sender).SelectedIndex-1;
+
             if (currentContactNumber < PhoneBook.Count)
             {
+                infoPage = new ContactInfoPage() { Title = $"page {currentContactNumber}" };
+
                 string currentContactType = TypeDescriptor.GetClassName(PhoneBook[(int)currentContactNumber]).Split('.').Last();
                 switch (currentContactType)
                 {
                     case "FoodContact":
-                        MessageBox.Show("f");
+                        infoPage.pesonInfo.Visibility = Visibility.Hidden;
+                        infoPage.schoolInfo.Visibility = Visibility.Hidden;
+                        infoPage.foodInfo.Visibility = Visibility.Visible;
+                        infoPage.foodInfo.DataContext = PhoneBook[(int)currentContactNumber];
                         break;
                     case "PersonContact":
-                        MessageBox.Show("p");
+                        infoPage.schoolInfo.Visibility = Visibility.Hidden;
+                        infoPage.foodInfo.Visibility = Visibility.Hidden;
+                        infoPage.pesonInfo.Visibility = Visibility.Visible;
+                        infoPage.pesonInfo.DataContext = PhoneBook[(int)currentContactNumber];
                         break;
                     case "SchoolContact":
-                        MessageBox.Show("s");
+                        infoPage.pesonInfo.Visibility= Visibility.Hidden;
+                        infoPage.foodInfo.Visibility= Visibility.Hidden;
+                        infoPage.schoolInfo.Visibility = Visibility.Visible;
+                        infoPage.schoolInfo.DataContext = PhoneBook[(int)currentContactNumber];
                         break;
 
                     default:

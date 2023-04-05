@@ -8,12 +8,11 @@ namespace pz_008.Model.Domain
 {
     internal class SchoolContact : IContact
     {
-        public string Name { get; }
-
-        public long Phone { get; }
-        public string Adress { get; }
-        public string Specialization { get; }
-        public int StudentCount { get; }
+        public string Name { get; set; }
+        public long Phone { get; set; }
+        public string Adress { get; set; }
+        public string Specialization { get; set; }
+        public int StudentCount { get; set; }
 
         public SchoolContact(string name, long phone, string adress, string specialization, int studentCount)
         {

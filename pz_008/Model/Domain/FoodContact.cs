@@ -8,11 +8,11 @@ namespace pz_008.Model.Domain
 {
     internal class FoodContact : IContact
     {
-        public string Name { get; }
-        public long Phone { get; }
-        public string Address { get; }
-        public string Description { get; }
-        public string[] Menu { get; }
+        public string Name { get; set; }
+        public long Phone { get; set; }
+        public string Address { get; set; }
+        public string Description { get; set; }
+        public string[] Menu { get; set; }
 
         public FoodContact(string name, long phone, string adrecc, string description, string[] menu)
         {
