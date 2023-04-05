@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pz_008.Model.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace pz_008
         public ContactInfoPage()
         {
             InitializeComponent();
+            //foodInfo.DataContext = new FoodContact("dfdsg", 42344312,"fsdsfd","fsddf", new string[] { "fsdf", "fsdfsd"});
         }
     }
 }

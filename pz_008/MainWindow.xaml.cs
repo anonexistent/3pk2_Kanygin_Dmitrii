@@ -36,17 +36,17 @@ namespace pz_008
             nWin.Content = infoPage;
 
             FoodContactFactory testFactory = new FoodContactFactory("sdds", 4324, "fsdf", "sfe", new string[] { "dasd", "fsdfsd", "fsdfsdf" });
-            SchoolContactFactory testFactory2 = new("schooooool", 123456789, "orenberg, 2, 10/3", "techno", 1000);
+            SchoolContactFactory testFactory2 = new("schooooool", 123456789, "orenberg, street2, 10/3", "techno", 1000);
+            PersonContactFactory testFactory3 = new("person1", 89198546795, "russia");
 
             currentPhone = testFactory2.GetContact();
             //currentPhone = testFactory.GetContact();
-            MessageBox.Show(string.Join('\n', currentPhone.GetInfo()));
+            //currentPhone = testFactory3.GetContact();
+            //MessageBox.Show(string.Join('\n', currentPhone.GetInfo()));
         }
 
         private void ListBoxItem_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("g");
-
             var a = new ListBoxItem() { };
 
             listBox1.Items.Add(a);
@@ -56,9 +56,14 @@ namespace pz_008
 
         private void DrawNewContact(object whoCallMe)
         {
-            nWin = new Frame();
-            nWin.Content = new ContactInfoPage() { Title = $"page {++ii}" };
-            ((ListBoxItem)whoCallMe).Content = $"page {ii}";
+            //nWin = new Frame();
+
+            ContactInfoPage c = new ContactInfoPage() { Title = $"page {++ii}" };
+            c.foodInfo.DataContext = currentPhone;
+
+            nWin.Content = c;
+            
+            ((ListBoxItem)whoCallMe).Content = $"contact{ii}";
         }
 
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
