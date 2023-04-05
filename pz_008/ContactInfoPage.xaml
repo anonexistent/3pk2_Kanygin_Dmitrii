@@ -19,7 +19,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <!--<TextBlock x:Name="tb1" Text="contact info" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+        <!--<TextBox x:Name="tb1" Text="contact info" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
         <Border Grid.ColumnSpan="2" CornerRadius="15" BorderBrush="Red" BorderThickness="5" VerticalAlignment="Center">
             <ComboBox x:Name="cbContactType" Text="select contact type" Background="AliceBlue" Margin="15" FontWeight="Black" IsReadOnly="True" SelectedIndex="1">
@@ -31,25 +31,25 @@
 
 
         <StackPanel x:Name="foodInfo" Margin="15" Background="White" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="1">
-            <TextBlock Text="{Binding Path=Name}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Phone}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Address}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Description}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Menu}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Name}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Phone}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Address}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Description}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Menu}" FontSize="18"/>
         </StackPanel>
 
         <StackPanel x:Name="pesonInfo" Margin="15" Background="Pink" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="1">
-            <TextBlock Text="{Binding Path=Name}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Phone}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Region}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Name}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Phone}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Region}" FontSize="18"/>
         </StackPanel>
 
         <StackPanel x:Name="schoolInfo" Margin="15" Background="Red" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="1">
-            <TextBlock Text="{Binding Path=Name}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Phone}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Adress}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=Specialization}" FontSize="18"/>
-            <TextBlock Text="{Binding Path=StudentCount}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Name}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Phone}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Adress}" FontSize="18"/>
+            <TextBox Text="{Binding Path=Specialization}" FontSize="18"/>
+            <TextBox Text="{Binding Path=StudentCount}" FontSize="18"/>
         </StackPanel>
 
         <Button x:Name="createNewContact" Grid.Row="2" Grid.Column="2" Margin="25" Cursor="Hand" Click="createNewContact_Click"/>
