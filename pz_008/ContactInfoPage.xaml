@@ -9,11 +9,18 @@
       Title="ContactInfoPage">
 
     <Grid>
-        <TextBlock x:Name="tb1" Text="contact info" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--<TextBlock x:Name="tb1" Text="contact info" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
         <StackPanel x:Name="foodInfo">
             <TextBlock Text="{Binding Path=Name}" FontSize="18"/>
             <TextBlock Text="{Binding Path=Phone}" FontSize="18"/>
+            <TextBlock Text="{Binding Path=Address}" FontSize="18"/>
+            <TextBlock Text="{Binding Path=Description}" FontSize="18"/>
+            <TextBlock Text="{Binding Path=Menu}" FontSize="18"/>
         </StackPanel>
+
+        <StackPanel x:Name="schoolInfo"></StackPanel>
+
+        <StackPanel x:Name="pesonInfo"></StackPanel>
     </Grid>
 </Page>

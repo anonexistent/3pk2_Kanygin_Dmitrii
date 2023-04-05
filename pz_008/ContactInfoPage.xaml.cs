@@ -21,9 +21,12 @@ namespace pz_008
     /// </summary>
     public partial class ContactInfoPage : Page
     {
+        bool firstView = true;
         public ContactInfoPage()
         {
             InitializeComponent();
+            firstView = !firstView;
+
             //foodInfo.DataContext = new FoodContact("dfdsg", 42344312,"fsdsfd","fsddf", new string[] { "fsdf", "fsdfsd"});
         }
     }

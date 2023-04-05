@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using pz_008.Model.Factory;
 using pz_008.Model.Domain;
+using System.ComponentModel;
 
 namespace pz_008
 {
@@ -24,14 +25,16 @@ namespace pz_008
     {
         IContact currentPhone;
 
+        List<IContact> PhoneBook;
+
         ContactInfoPage infoPage;
         int ii = 0;
 
         public MainWindow()
         {
             InitializeComponent();
-
             infoPage = new();
+            PhoneBook = new();
 
             nWin.Content = infoPage;
 
@@ -40,6 +43,7 @@ namespace pz_008
             PersonContactFactory testFactory3 = new("person1", 89198546795, "russia");
 
             currentPhone = testFactory2.GetContact();
+            ////MessageBox.Show(TypeDescriptor.GetClassName(currentPhone).Split('.').Last());
             //currentPhone = testFactory.GetContact();
             //currentPhone = testFactory3.GetContact();
             //MessageBox.Show(string.Join('\n', currentPhone.GetInfo()));
@@ -56,21 +60,44 @@ namespace pz_008
             
         private void DrawNewContact(object whoCallMe)
         {
-            currentPhone = new PersonContactFactory("zxczxc", 1234, "moscow").GetContact();
+            //currentPhone = new PersonContactFactory("zxczxc", 1234, "moscow").GetContact();
 
             //nWin = new Frame();
 
-            ContactInfoPage c = new ContactInfoPage() { Title = $"page {++ii}" };
-            c.foodInfo.DataContext = currentPhone;
+            PhoneBook.Add(currentPhone);
 
-            nWin.Content = c;
+            infoPage = new ContactInfoPage() { Title = $"page {ii}" };
+            infoPage.foodInfo.DataContext = currentPhone;
+
+            nWin.Content = infoPage;
             
             ((ListBoxItem)whoCallMe).Content = $"contact{ii}";
+
+            ii++;
         }
 
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            uint currentContactNumber = (uint)((ListBox)sender).SelectedIndex-1;
+            if (currentContactNumber < PhoneBook.Count)
+            {
+                string currentContactType = TypeDescriptor.GetClassName(PhoneBook[(int)currentContactNumber]).Split('.').Last();
+                switch (currentContactType)
+                {
+                    case "FoodContact":
+                        MessageBox.Show("f");
+                        break;
+                    case "PersonContact":
+                        MessageBox.Show("p");
+                        break;
+                    case "SchoolContact":
+                        MessageBox.Show("s");
+                        break;
 
+                    default:
+                        break;
+                }
+            }
         }
     }
 }
