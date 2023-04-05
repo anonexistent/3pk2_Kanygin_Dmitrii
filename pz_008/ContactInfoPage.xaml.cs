@@ -27,7 +27,12 @@ namespace pz_008
             InitializeComponent();
             firstView = !firstView;
 
-            foodInfo.DataContext = new FoodContact("dfdsg", 42344312,"fsdsfd","fsddf", new string[] { "fsdf", "fsdfsd"});
+            //foodInfo.DataContext = new FoodContact("dfdsg", 42344312,"fsdsfd","fsddf", new string[] { "fsdf", "fsdfsd"});
+        }
+
+        private void createNewContact_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pz_008"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PHONE_CALL_PERSON_SCHOOL_FOOD_APPLICATION" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,6 +23,9 @@
 
         <ListBox x:Name="listBox1" Grid.RowSpan="4" Margin="15" Background="Bisque" SelectionChanged="listBox1_SelectionChanged">
             <ListBoxItem Content="++++ (new contact)" PreviewMouseLeftButtonDown="ListBoxItem_MouseLeftButtonDown"></ListBoxItem>
+            <ListBoxItem Content="test"/>
+            <ListBoxItem Content="test"/>
+            <ListBoxItem Content="test"/>
         </ListBox>
 
         <Frame x:Name="nWin" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="25" Background="Bisque"></Frame>

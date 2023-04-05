@@ -38,9 +38,16 @@ namespace pz_008
 
             nWin.Content = infoPage;
 
-            FoodContactFactory testFactory = new FoodContactFactory("sdds", 4324, "fsdf", "sfe", new string[] { "dasd", "fsdfsd", "fsdfsdf" });
-            SchoolContactFactory testFactory2 = new("schooooool", 123456789, "orenberg, street2, 10/3", "techno", 1000);
-            PersonContactFactory testFactory3 = new("person1", 89198546795, "russia");
+            FoodContactFactory testFactory = new FoodContactFactory("TESTfood", 4324, "aaaaaaa", "bbbbbb", new string[] { "ooooo", "ppppp", "tttttttt" });
+            SchoolContactFactory testFactory2 = new("TESTschooooool", 123456789, "orenberg, street2, 10/3", "techno", 1000);
+            PersonContactFactory testFactory3 = new("TESTperson", 89198546795, "russia");
+
+            PhoneBook.Add(testFactory.GetContact());
+            PhoneBook.Add(testFactory2.GetContact());
+            PhoneBook.Add(testFactory3.GetContact());
+            //listBox1.Items.Add(new ListBoxItem() { Content="TEST____ETSTETS"});
+            //listBox1.Items.Add(new ListBoxItem() { Content = "TEST____ETSTETS" });
+            //listBox1.Items.Add(new ListBoxItem() { Content = "TEST____ETSTETS" });
 
             currentPhone = testFactory2.GetContact();
             ////MessageBox.Show(TypeDescriptor.GetClassName(currentPhone).Split('.').Last());
@@ -64,10 +71,10 @@ namespace pz_008
 
             //nWin = new Frame();
 
-            PhoneBook.Add(currentPhone);
+            //PhoneBook.Add(currentPhone);
 
             infoPage = new ContactInfoPage() { Title = $"page {ii}" };
-            infoPage.foodInfo.DataContext = currentPhone;
+            //infoPage.foodInfo.DataContext = currentPhone;
 
             nWin.Content = infoPage;
             
@@ -88,22 +95,25 @@ namespace pz_008
                 switch (currentContactType)
                 {
                     case "FoodContact":
-                        infoPage.pesonInfo.Visibility = Visibility.Hidden;
-                        infoPage.schoolInfo.Visibility = Visibility.Hidden;
-                        infoPage.foodInfo.Visibility = Visibility.Visible;
-                        infoPage.foodInfo.DataContext = PhoneBook[(int)currentContactNumber];
+                        ((ContactInfoPage)(nWin.Content)).pesonInfo.Visibility = Visibility.Hidden;
+                        ((ContactInfoPage)(nWin.Content)).schoolInfo.Visibility = Visibility.Hidden;
+                        ((ContactInfoPage)(nWin.Content)).foodInfo.Visibility = Visibility.Visible;
+                        ((ContactInfoPage)(nWin.Content)).foodInfo.DataContext = (FoodContact)PhoneBook[(int)currentContactNumber];
+                        MessageBox.Show("food");
                         break;
                     case "PersonContact":
-                        infoPage.schoolInfo.Visibility = Visibility.Hidden;
-                        infoPage.foodInfo.Visibility = Visibility.Hidden;
-                        infoPage.pesonInfo.Visibility = Visibility.Visible;
-                        infoPage.pesonInfo.DataContext = PhoneBook[(int)currentContactNumber];
+                        ((ContactInfoPage)(nWin.Content)).schoolInfo.Visibility = Visibility.Hidden;
+                        ((ContactInfoPage)(nWin.Content)).foodInfo.Visibility = Visibility.Hidden;
+                        ((ContactInfoPage)(nWin.Content)).pesonInfo.Visibility = Visibility.Visible;
+                        ((ContactInfoPage)(nWin.Content)).pesonInfo.DataContext = PhoneBook[(int)currentContactNumber];
+                        MessageBox.Show("person");
                         break;
                     case "SchoolContact":
-                        infoPage.pesonInfo.Visibility= Visibility.Hidden;
-                        infoPage.foodInfo.Visibility= Visibility.Hidden;
-                        infoPage.schoolInfo.Visibility = Visibility.Visible;
-                        infoPage.schoolInfo.DataContext = PhoneBook[(int)currentContactNumber];
+                        ((ContactInfoPage)(nWin.Content)).pesonInfo.Visibility= Visibility.Hidden;
+                        ((ContactInfoPage)(nWin.Content)).foodInfo.Visibility= Visibility.Hidden;
+                        ((ContactInfoPage)(nWin.Content)).schoolInfo.Visibility = Visibility.Visible;
+                        ((ContactInfoPage)(nWin.Content)).schoolInfo.DataContext = PhoneBook[(int)currentContactNumber];
+                        MessageBox.Show("school");
                         break;
 
                     default:
