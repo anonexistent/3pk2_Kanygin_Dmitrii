@@ -38,13 +38,22 @@ namespace pz_008
 
             nWin.Content = infoPage;
 
-            FoodContactFactory testFactory = new FoodContactFactory("TESTfood", 4324, "aaaaaaa", "bbbbbb", new string[] { "ooooo", "ppppp", "tttttttt" });
+            FoodContactFactory testFactory = new("TESTfood", 4324, "aaaaaaa", "bbbbbb", new string[] { "ooooo", "ppppp", "tttttttt" });
             SchoolContactFactory testFactory2 = new("TESTschooooool", 123456789, "orenberg, street2, 10/3", "techno", 1000);
-            PersonContactFactory testFactory3 = new("TESTperson", 89198546795, "russia");
+            PersonContactFactory testFactory3 = new("TESTperson", 89998544495, "russia");
+
+            FoodContactFactory testFactory4 = new("TESTfood2", 8353248000, "Волковский проезд, 4, Люберцы, Московская область, 140000", 
+                "Как добраться\r\nКотельники\r\n3,4 км\r\n2\r\nПенсионный фонд\r\n34 м\r\n4\r\n\r\nТакси от 139 ₽", 
+                new string[] { "Запечённые мозговые косточки с чесночными гренками", "Хрустящая лепешка с мясом", "Гренки чесночные с соусом тартар" });
+            SchoolContactFactory testFactory5 = new("TESTschool2", 88002000122, "МАОУ Видновская средняя общеобразовательная школа № 11", "J,otj,hfpjdfybt", 1500);
+            PersonContactFactory testFactory6 = new("TESTperson2", 74951075132, "Moscow");
 
             PhoneBook.Add(testFactory.GetContact());
             PhoneBook.Add(testFactory2.GetContact());
             PhoneBook.Add(testFactory3.GetContact());
+            PhoneBook.Add(testFactory4.GetContact());
+            PhoneBook.Add(testFactory5.GetContact());
+            PhoneBook.Add(testFactory6.GetContact());
             //listBox1.Items.Add(new ListBoxItem() { Content="TEST____ETSTETS"});
             //listBox1.Items.Add(new ListBoxItem() { Content = "TEST____ETSTETS" });
             //listBox1.Items.Add(new ListBoxItem() { Content = "TEST____ETSTETS" });
@@ -62,7 +71,12 @@ namespace pz_008
 
             listBox1.Items.Add(a);
 
+            //  xor
+            listBox1.IsEnabled ^= true;
+
             DrawNewContact(a);
+
+            listBox1.IsEnabled ^= true;
         }
             
         private void DrawNewContact(object whoCallMe)
@@ -75,10 +89,15 @@ namespace pz_008
 
             infoPage = new ContactInfoPage() { Title = $"page {ii}" };
             //infoPage.foodInfo.DataContext = currentPhone;
+            
 
-            nWin.Content = infoPage;
+            //nWin.Content = infoPage;
             
             ((ListBoxItem)whoCallMe).Content = $"contact{ii}";
+
+            MessageBox.Show("спасибо", "thx");
+            
+            //infoPage.cbContactType.IsEnabled ^= true;
 
             ii++;
         }

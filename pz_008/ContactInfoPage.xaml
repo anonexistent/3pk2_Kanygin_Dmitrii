@@ -21,8 +21,8 @@
         </Grid.RowDefinitions>
         <!--<TextBox x:Name="tb1" Text="contact info" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
-        <Border Grid.ColumnSpan="2" CornerRadius="15" BorderBrush="Red" BorderThickness="5" VerticalAlignment="Center">
-            <ComboBox x:Name="cbContactType" Text="select contact type" Background="AliceBlue" Margin="15" FontWeight="Black" IsReadOnly="True" SelectedIndex="1">
+        <Border x:Name="cbContactType" Grid.ColumnSpan="2" CornerRadius="15" BorderBrush="Red" BorderThickness="5" IsEnabled="false" VerticalAlignment="Center">
+            <ComboBox Text="select contact type" Background="AliceBlue" Margin="15" FontWeight="Black" IsReadOnly="True" SelectedIndex="1">
                 <ComboBoxItem Content="food"/>
                 <ComboBoxItem Content="person"/>
                 <ComboBoxItem Content="school"/>
@@ -52,7 +52,7 @@
             <TextBox Text="{Binding Path=StudentCount}" FontSize="18"/>
         </StackPanel>
 
-        <Button x:Name="createNewContact" Grid.Row="2" Grid.Column="2" Margin="25" Cursor="Hand" Click="createNewContact_Click"/>
+        <Button x:Name="createNewContact" Grid.Row="2" Grid.Column="2" Margin="25" Cursor="Hand" IsEnabled="False" Click="createNewContact_Click"/>
 
     </Grid>
 </Page>

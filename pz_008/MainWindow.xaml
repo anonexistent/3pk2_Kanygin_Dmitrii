@@ -22,10 +22,13 @@
         </Grid.RowDefinitions>
 
         <ListBox x:Name="listBox1" Grid.RowSpan="4" Margin="15" Background="Bisque" SelectionChanged="listBox1_SelectionChanged">
-            <ListBoxItem Content="++++ (new contact)" PreviewMouseLeftButtonDown="ListBoxItem_MouseLeftButtonDown"></ListBoxItem>
-            <ListBoxItem Content="test"/>
-            <ListBoxItem Content="test"/>
-            <ListBoxItem Content="test"/>
+            <ListBoxItem Content="++++ (new contact)" IsEnabled="false" PreviewMouseLeftButtonDown="ListBoxItem_MouseLeftButtonDown"></ListBoxItem>
+            <ListBoxItem Content="test1"/>
+            <ListBoxItem Content="test2"/>
+            <ListBoxItem Content="test3"/>
+            <ListBoxItem Content="test4"/>
+            <ListBoxItem Content="test5"/>
+            <ListBoxItem Content="test6"/>
         </ListBox>
 
         <Frame x:Name="nWin" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="25" Background="Bisque"></Frame>
