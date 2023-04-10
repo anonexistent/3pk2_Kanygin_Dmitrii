@@ -37,8 +37,8 @@ namespace pz_010
             fontSizes = new List<ComboBoxItem>();
             makeFontSizes();
 
-            //TimerCallback tc = new(makeOnePhoto);
-            //Timer timer = new(tc, null , 0, 5000);
+            TimerCallback tc = new(makeOnePhoto);
+            Timer timer = new(tc, null, 0, 5000);
         }
 
         #region TextEditorModel
@@ -51,6 +51,7 @@ namespace pz_010
             }
         }
 
+        //  exit
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -68,7 +69,7 @@ namespace pz_010
 
         private async void newFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            await Task.Delay(250);
+            //await Task.Delay(250);
             //MessageBox.Show(((ComboBox)sender).SelectionBoxItem.ToString());
             textBox.Selection.ApplyPropertyValue(FontSizeProperty, ((ComboBox)sender).SelectionBoxItem);
         }
