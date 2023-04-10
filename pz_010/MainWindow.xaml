@@ -50,7 +50,7 @@
             </RichTextBox>
         </DockPanel>
 
-
-
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="IN" Height="35" Width="35" Margin="0,0,45,0" Click="Button_Click_in"/>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="OUT" Height="35" Width="35" Click="Button_Click_out"/>
     </Grid>
 </Window>

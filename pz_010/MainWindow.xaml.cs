@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using pz_010.Backroll;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,16 +25,20 @@ namespace pz_010
     public partial class MainWindow : Window
     {
         List<ComboBoxItem> fontSizes;
+        Album photoAlbum;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            photoAlbum = new();
 
             fontSizes = new List<ComboBoxItem>();
             makeFontSizes();
 
         }
 
+        #region TextEditorModel
         void makeFontSizes()
         {
             for (int i = 0; i < 10; i++)
@@ -83,6 +88,36 @@ namespace pz_010
             //{
             //    text.Save(sw, "");
             //}
+        }
+
+        #endregion
+
+        private void Button_Click_in(object sender, RoutedEventArgs e)
+        {
+            photoAlbum.photos.Push(new Photo(textBox.Document));
+
+            //switch (MessageBox.Show("save too?", "?", MessageBoxButton.YesNo))
+            //{
+            //    case MessageBoxResult.Yes:
+            //        MenuItem_Click_Save(new object(), new RoutedEventArgs());
+            //        break;
+            //    case MessageBoxResult.No:
+            //        break;
+            //    default:
+            //        break;
+            //}
+        }
+
+        private Album GetPhotoAlbum()
+        {
+            return photoAlbum;
+        }
+
+        private void Button_Click_out(object sender, RoutedEventArgs e)
+        {
+            //textBox.Document.UpdateDefaultStyle();
+
+            textBox.Document = photoAlbum.photos.Pop().text;
         }
     }
 }

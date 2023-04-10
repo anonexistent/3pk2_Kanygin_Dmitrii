@@ -8,6 +8,11 @@ namespace pz_010.Backroll
 {
     class Album
     {
-        public Photo photo {  get; set; }
+        public Stack<Photo> photos {  get; set; }
+
+        public Album()
+        {
+            photos = new Stack<Photo>();
+        }
     }
 }
