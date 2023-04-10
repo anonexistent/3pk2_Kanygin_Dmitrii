@@ -32,9 +32,9 @@ public partial class MainWindow : Window
 
         fontSizes = new List<ComboBoxItem>();
         makeFontSizes();
-
-        TimerCallback tc = new(makeOnePhoto);
-        Timer timer = new(tc, null, 0, 5000);
+        
+        //TimerCallback tc = new(makeOnePhoto);
+        //Timer timer = new(tc, null, 0, 5000);
     }
 
     #region TextEditorModel
