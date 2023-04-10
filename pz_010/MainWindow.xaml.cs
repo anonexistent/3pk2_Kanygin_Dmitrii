@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,6 +37,8 @@ namespace pz_010
             fontSizes = new List<ComboBoxItem>();
             makeFontSizes();
 
+            //TimerCallback tc = new(makeOnePhoto);
+            //Timer timer = new(tc, null , 0, 5000);
         }
 
         #region TextEditorModel
@@ -94,7 +97,7 @@ namespace pz_010
 
         private void Button_Click_in(object sender, RoutedEventArgs e)
         {
-            photoAlbum.photos.Push(new Photo(textBox.Document));
+            makeOnePhoto();
 
             //switch (MessageBox.Show("save too?", "?", MessageBoxButton.YesNo))
             //{
@@ -108,9 +111,10 @@ namespace pz_010
             //}
         }
 
-        private Album GetPhotoAlbum()
+        void makeOnePhoto(object? a = null)
         {
-            return photoAlbum;
+            photoAlbum.photos.Push(new Photo(textBox.Document));
+            MessageBox.Show("take photo");
         }
 
         private void Button_Click_out(object sender, RoutedEventArgs e)

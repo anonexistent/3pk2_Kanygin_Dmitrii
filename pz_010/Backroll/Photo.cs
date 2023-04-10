@@ -12,6 +12,9 @@ namespace pz_010.Backroll
     class Photo
     {
         public FlowDocument text { get; }
+
+        public Photo() { }
+
         public Photo(FlowDocument document)
         {
             FlowDocument temp = new();

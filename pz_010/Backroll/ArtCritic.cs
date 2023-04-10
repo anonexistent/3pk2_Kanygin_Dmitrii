@@ -9,7 +9,7 @@ namespace pz_010.Backroll
 {
     class ArtCritic
     {
-        FlowDocument document { get; set; }
+        FlowDocument? document { get; set; }
         public void SetPhoto(Photo photo)
         {
             document = photo.text;
