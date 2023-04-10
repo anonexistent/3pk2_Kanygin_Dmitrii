@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Documents;
 
-namespace pz_010.Backroll
+namespace pz_010.Backroll;
+
+class Photo
 {
-    class Photo
+    public FlowDocument text { get; }
+
+    public Photo() { }
+
+    public Photo(FlowDocument document)
     {
-        public FlowDocument text { get; }
+        FlowDocument temp = new();
+        TextRange a = new(document.ContentStart, document.ContentEnd);
+        MemoryStream ms = new();
+        a.Save(ms, DataFormats.Rtf);
+        a = new(temp.ContentStart, temp.ContentEnd);
+        a.Load(ms, DataFormats.Rtf);
 
-        public Photo() { }
-
-        public Photo(FlowDocument document)
-        {
-            FlowDocument temp = new();
-            TextRange a = new(document.ContentStart, document.ContentEnd);
-            MemoryStream ms = new();
-            a.Save(ms, DataFormats.Rtf);
-            a = new(temp.ContentStart, temp.ContentEnd);
-            a.Load(ms, DataFormats.Rtf);
-
-            text = temp;
-        }
+        text = temp;
     }
 }
