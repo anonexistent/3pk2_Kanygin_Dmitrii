@@ -28,13 +28,11 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        photoAlbum = new();
+        photoAlbum = new(new Stack<Photo>());
 
         fontSizes = new List<ComboBoxItem>();
         makeFontSizes();
         
-        //TimerCallback tc = new(makeOnePhoto);
-        //Timer timer = new(tc, null, 0, 5000);
     }
 
     #region TextEditorModel
@@ -93,6 +91,17 @@ public partial class MainWindow : Window
 
         #endregion
 
+    async Task TimerStart()
+    {
+        //System.InvalidOperationException:
+        //"Вызывающий поток не может получить доступ к
+        //данному объекту, так как владельцем этого объекта
+        //является другой поток."
+
+        TimerCallback tc = new TimerCallback(makeOnePhoto);
+        Timer timer = new(tc, null, 0, 5000);
+    }
+
     private void Button_Click_in(object sender, RoutedEventArgs e)
     {
         makeOnePhoto();
@@ -128,5 +137,12 @@ public partial class MainWindow : Window
         { 
             MessageBox.Show(ex.Message); 
         }
+    }
+
+    private async void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+        //Dispatcher.InvokeAsync(()=> Task.Run(() => TimerStart()));
+        //Dispatcher.Invoke(()=>TimerStart());
+        //await TimerStart();
     }
 }
