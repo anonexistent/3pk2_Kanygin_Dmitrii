@@ -32,7 +32,8 @@ public partial class MainWindow : Window
 
         fontSizes = new List<ComboBoxItem>();
         makeFontSizes();
-        
+
+        //TimerStart();
     }
 
     #region TextEditorModel
@@ -81,6 +82,8 @@ public partial class MainWindow : Window
         //  особенности ричтекстбокса
         TextRange text = new(textBox.Document.ContentStart, textBox.Document.ContentEnd);
         text.Save(writeHere, DataFormats.Rtf);
+
+        TextBox a = new TextBox();
 
         writeHere.Close();
         //using (StreamWriter sw = new(dialog.OpenFile()))
