@@ -27,6 +27,8 @@ namespace pz_011
 
             var dc = new BookViewModel();
             DataContext = dc;
+
+            //btnSaveBook.CommandParameter = this;
         }
     }
 }
