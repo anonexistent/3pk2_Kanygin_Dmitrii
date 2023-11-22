@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pz_013"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="650">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Text="REGISTRATION FORM" Grid.ColumnSpan="2" FontSize="34" FontWeight="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Text="login" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbLogin" Grid.Row="1" Grid.Column="1" Margin="15">
+            <TextBox.Text>
+                <Binding Path="Login">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock Text="email" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbEmail" Grid.Row="2" Grid.Column="1" Margin="15">
+            <TextBox.Text>
+                <Binding Path="Email">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock Text="password" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbPassword" Grid.Row="3" Grid.Column="1" Margin="15">
+            <Binding Path="Password">
+                <Binding.ValidationRules>
+                    <DataErrorValidationRule/>
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+
+        <TextBlock Text="password again" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbPassword2" Grid.Row="4" Grid.Column="1" Margin="15">
+            <Binding Path="Password2">
+                <Binding.ValidationRules>
+                    <DataErrorValidationRule/>
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+
+        <Button x:Name="btnGo" Grid.Row="5" Grid.ColumnSpan="2" Margin="25 5 25 15" Content="ok?" FontSize="26" FontWeight="Black" Click="btnGo_Click"/>
     </Grid>
 </Window>

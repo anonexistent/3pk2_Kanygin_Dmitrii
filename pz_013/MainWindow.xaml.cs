@@ -18,11 +18,22 @@ namespace pz_013
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    ///
     public partial class MainWindow : Window
-    {
+    {    
+        Student student;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            student = new();
+            this.DataContext = student;
+        }
+
+        private void btnGo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("u win");
         }
     }
 }
